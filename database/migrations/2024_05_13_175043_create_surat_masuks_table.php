@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('surat_masuks', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('id_kop')->references('id')->on('kepala_surats');
             $table->time('tanggal');
             $table->string('no_surat');
             $table->string('asal_surat');
